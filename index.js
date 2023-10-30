@@ -36,7 +36,7 @@ const port = parseInt(process.env.SignpostServerPort);
 //
 //  Client facing request routing
 // 
-app.get('/', servePortal);
+app.get('/json', servePortal);
 
 //app.get('/json', userFetchCollections);
 //app.get('/article', userFetchArticle) ;

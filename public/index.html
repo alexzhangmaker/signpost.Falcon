@@ -5,124 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <title>signpost.Falcon</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-  <!-- APP Manifest 
+  <!-- APP Manifest  -->
   <link rel="manifest" href="/manifest.json">
-  -->
-      
+
   <style>
-    :root {
-      --gridHeight: 60px;
-      --gridHeightKPI: calc(var(--gridHeight) * 1.2) ;
-      --gridHeightLogo:calc(var(--gridHeight) * 3) ;
-      --gridHeightFoot: var(--gridHeight) ;
-      --spCardBaseFont: 16px;
+    .falconCards{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    body {
-      background-color: lightblue;    
-    }
-
-    .footer-container {
+    .signpostFlex{
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: space-between;
-      align-items: center;
-      align-content: center;
+      align-items: normal;
+      align-content: normal;
     }
-
-    .footer-items:nth-child(1) {
-      display: block;
-      flex-grow: 0;
-      flex-shrink: 1;
-      flex-basis: auto;
-      align-self: auto;
-      order: 0;
-    }
-
-    .footer-items:nth-child(2) {
-      display: block;
-      flex-grow: 0;
-      flex-shrink: 1;
-      flex-basis: auto;
-      align-self: auto;
-      order: 0;
-    }
-
-    .footer-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-    }
-
-    .footer-items:nth-child(1) {
-      display: block;
-      flex-grow: 0;
-      flex-shrink: 1;
-      flex-basis: auto;
-      align-self: auto;
-      order: 0;
-    }
-
-    .footer-items:nth-child(2) {
-      display: block;
-      flex-grow: 0;
-      flex-shrink: 1;
-      flex-basis: auto;
-      align-self: auto;
-      order: 0;
-    }
-
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-
-    th, td { 
-      white-space: nowrap; 
-    }
-
-    div.dataTables_wrapper {
-      width: 1240px;
-      margin: 0 auto;
-    }
-
   </style>
+
 </head>
 <body>
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
           <a href="#" class="navbar-brand">
-              <img src="images/logo_athena.svg" height="28" alt="CoolBrand">
+              <img src="images/icons/falcon-64.png" height="28" alt="falcon">
           </a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
               <div class="navbar-nav">
-                  <a href="#" class="nav-item nav-link active">Home</a>
+                  <a href="#" class="nav-item nav-link active">Money Man</a>
                   <a href="#" class="nav-item nav-link">Profile</a>
                   <a href="#" class="nav-item nav-link">Messages</a>
                   <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
@@ -134,20 +57,359 @@
       </div>
   </nav>
 
-  <div class="m-4" style="font-family: 'Roboto',sans-serif;" id="webCompPortfolio">
-  </div>
+  <div class="m-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4 falconCards" >
 
-  <div class="m-4 border" style="font-family: 'Roboto',sans-serif;" id="webCompMessage">
-  </div>
+      <div class='col fcPortfolio'>
+        <div class="card border-success">
+          <div class="card-header signpostFlex">
+            <div><i class="bi-bar-chart-line-fill" style="font-size: 24px;"></i></div>
+            <div>
+              <span>win $2050.00</span>
+              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+            </div>
 
-  <div class="m-4" style="font-family: 'Roboto',sans-serif;" id="webCompNews">
-  </div>
+          </div>
+
+          <div class="card-body">
+              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+              <div class="table-responsive"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            
+                            <th>Account</th>
+                            <th>Value TTM</th>
+                            <th>Gain/Loss</th>
+                            <th>G/L %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>U1234567</td>
+                            <td>$780,000</td>
+                            <td>1560.00</td>
+                            <td>0.67%</td>
+                        </tr>
+                        <tr>
+                          <td>U1234567</td>
+                            <td>$780,000</td>
+                            <td>1560.00</td>
+                            <td>0.67%</td>
+                        </tr>
+                        <tr>
+                          <td>U1234567</td>
+                          <td>$780,000</td>
+                          <td>1560.00</td>
+                          <td>0.67%</td>
+                        </tr>
+                        <tr>
+                          <td>海通证券</td>
+                          <td>RMB280,000</td>
+                          <td>-156.00</td>
+                          <td>-0.91%</td>
+                        </tr>
+                        <tr style="color: orchid; font-weight: bold;">
+                          <td>Total[RMB]</td>
+                          <td>RMB1280,000</td>
+                          <td>-156.00</td>
+                          <td>-0.21%</td>
+                        </tr>
+                        <tr style="color:firebrick;font-family: Georgia, 'Times New Roman', Times, serif;">
+                          <td>Total[USD]</td>
+                          <td>$280,000</td>
+                          <td>-156.00</td>
+                          <td>-0.21%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+          </div>
+          <div class="card-footer text-muted signpostFlex">
+            <span style="font-size: 12px;">2023/10/29</span>
+            <i class="bi-info-circle"></i>
+            
+          </div>
+        </div>
+      </div>
+          
+      <div class='col fcAccount'>
+        <div class="card border-success">
+          <div class="card-header signpostFlex">
+            <div><i class="bi-bar-chart-line-fill" style="font-size: 24px;"></i></div>
+            <div>
+              <span>海通证券 -CNY2050.00</span>
+              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+            </div>
+
+          </div>
+
+          <div class="card-body">
+              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+              <div class="table-responsive"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ticker</th>
+                            <th>Company</th>
+                            <th>Shares</th>
+                            <th>Cost</th>
+                            <th>Price</th>
+                            <th>P/L </th>
+                            <th>P/L %</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SH600600</td>
+                            <td>长江电力</td>
+                            <td>1200</td>
+                            <td>12.21</td>
+                            <td>20.20</td>
+                            <td>2022.00</td>
+                            <td>2.1%</td>
+                            <td>24,000</td>
+                        </tr>
+                        <tr>
+                            <td>SH600600</td>
+                            <td>中国平安</td>
+                            <td>1200</td>
+                            <td>12.21</td>
+                            <td>20.20</td>
+                            <td>2022.00</td>
+                            <td>2.1%</td>
+                            <td>24,000</td>
+                        </tr>
+                        <tr>
+                            <td>SH600600</td>
+                            <td>长江基建集团</td>
+                            <td>1200</td>
+                            <td>12.21</td>
+                            <td>20.20</td>
+                            <td>2022.00</td>
+                            <td>2.1%</td>
+                            <td>24,000</td>
+                        </tr>
+                        <tr>
+                            <td>SH600600</td>
+                            <td>腾讯科技</td>
+                            <td>1200</td>
+                            <td>12.21</td>
+                            <td>20.20</td>
+                            <td>2022.00</td>
+                            <td>2.1%</td>
+                            <td>24,000</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div> 
+          </div>
+          <div class="card-footer text-muted signpostFlex">
+            <span style="font-size: 12px;">2023/10/29</span>
+            <i class="bi-info-circle"></i>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class='col fcExpenditure'>
+        <div class="card border-success">
+          <div class="card-header signpostFlex">
+            <div><i class="bi-currency-exchange" style="font-size: 24px;"></i></div>
+            <div>
+              <span>till 2023/10/21</span>
+              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+            </div>
   
-  <div class="m-4" style="font-family: 'Roboto',sans-serif;" id="webCompDividends">
-  </div>
+          </div>
+  
+          <div class="card-body">
+              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+              <div class="table-responsive"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>date</th>
+                            <th>pay for</th>
+                            <th>class</th>
+                            <th>regular?</th>
+                            <th>amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023/10/21</td>
+                            <td>Gasline</td>
+                            <td>transportation</td>
+                            <td>none</td>
+                            <td>THB1052.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023/10/25</td>
+                            <td>Dinner</td>
+                            <td>Food</td>
+                            <td>none</td>
+                            <td>THB352.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023/10/26</td>
+                            <td>Power</td>
+                            <td>Utility</td>
+                            <td>monthly</td>
+                            <td>THB8052.00</td>
 
-  <div class="m-4" style="font-family: 'Roboto',sans-serif;" id="webCompCompanyKPI">  
-  </div>
+                        </tr>
+                        <tr>
+                            <td>2023/10/4</td>
+                            <td>Water</td>
+                            <td>Utility</td>
+                            <td>monthly</td>
+                            <td>THB1098.00</td>
+                        </tr>
+                        <tr>
+                          <td>2023/10/26</td>
+                          <td>Mobile</td>
+                          <td>Utility</td>
+                          <td>monthly</td>
+                          <td>THB550.00</td>
+                        </tr>
+                        <tr>
+                          <td>2023/10/26</td>
+                          <td>INTERNET</td>
+                          <td>Utility</td>
+                          <td>monthly</td>
+                          <td>THB650.00</td>
+
+                      </tr>
+                        <tr style="color: orchid; font-weight: bold;">
+                            <td>2023/10/21</td>
+                            <td>/</td>
+                            <td>/</td>
+                            <td>/</td>
+                            <td>THB8052.00</td>
+
+                        </tr>
+                          
+                    </tbody>
+                </table>
+            </div> 
+          </div>
+          <div class="card-footer text-muted signpostFlex">
+            <span style="font-size: 12px;">2023/10/29</span>
+            <i class="bi-info-circle"></i>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class='col fcExpenditure'>
+        <div class="card border-success">
+          <div class="card-header signpostFlex">
+            <div><i class="bi-currency-exchange" style="font-size: 24px;"></i></div>
+            <div>
+              <span>till 2023/10/21</span>
+              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+            </div>
+  
+          </div>
+  
+          <div class="card-body">
+              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+              <div class="table-responsive"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>date</th>
+                            <th>pay for</th>
+                            <th>class</th>
+                            <th>regular?</th>
+                            <th>amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023/10/21</td>
+                            <td>Gasline</td>
+                            <td>transportation</td>
+                            <td>none</td>
+                            <td>THB1052.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023/10/25</td>
+                            <td>Dinner</td>
+                            <td>Food</td>
+                            <td>none</td>
+                            <td>THB352.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023/10/26</td>
+                            <td>Power</td>
+                            <td>Utility</td>
+                            <td>monthly</td>
+                            <td>THB8052.00</td>
+
+                        </tr>
+                        <tr>
+                            <td>2023/10/4</td>
+                            <td>Water</td>
+                            <td>Utility</td>
+                            <td>monthly</td>
+                            <td>THB1098.00</td>
+                        </tr>
+                        <tr>
+                          <td>2023/10/26</td>
+                          <td>Mobile</td>
+                          <td>Utility</td>
+                          <td>monthly</td>
+                          <td>THB550.00</td>
+                        </tr>
+                        <tr>
+                          <td>2023/10/<span contenteditable="true">21</span></td>
+                          <td>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">payment</button>
+                              <div class="dropdown-menu">
+                                  <a href="#" class="dropdown-item">internet</a>
+                                  <a href="#" class="dropdown-item">mobile</a>
+                                  <a href="#" class="dropdown-item">gasline</a>
+                                  <div class="dropdown-header">power</div>
+                                  <a href="#" class="dropdown-item">Clothing</a>
+                                  <a href="#" class="dropdown-item">food</a>
+                            </div>
+                          </td>
+                          <td>Utility</td>
+                          <td>monthly</td>
+                          <td>THB<span contenteditable="true">200.00</span></td>
+                        </tr>
+                        <tr style="color: orchid; font-weight: bold;">
+                            <td>2023/10/21</td>
+                            <td>/</td>
+                            <td>/</td>
+                            <td>/</td>
+                            <td>THB8052.00</td>
+
+                        </tr>
+                          
+                    </tbody>
+                </table>
+            </div> 
+          </div>
+          <div class="card-footer text-muted signpostFlex">
+            <span style="font-size: 12px;">2023/10/29</span>
+            <div>
+            <i class="bi-plus-square" style="font-size: 18px;"></i>   
+            <i class="bi-check-square" style="font-size: 18px;"></i>         
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
 
 
 
@@ -168,6 +430,36 @@
   </script>
 
   <script>
+    function renderFalconCard(tagCardContainer,jsonCard={}){
+      let cCardHTML = `
+        <div class="card border-success">
+            <div class="card-header">Featured</div>
+            <div class="card-body">
+                <h5 class="card-title">NASA Launched Solar Probe</h5>
+                <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+            <div class="card-footer text-muted">3 years ago</div>
+        </div>
+      ` ;
+
+      let tagFalconCard = document.createElement('div') ;
+      tagCardContainer.appendChild(tagFalconCard) ;
+      tagFalconCard.classList.add('col') ;
+      tagFalconCard.innerHTML = cCardHTML ;
+      return tagFalconCard ;
+
+    }
+
+    document.addEventListener('DOMContentLoaded',(event)=>{
+      let tagFalconCards = document.querySelector('.falconCards') ;
+      renderFalconCard(tagFalconCards) ;
+      renderFalconCard(tagFalconCards) ;
+      renderFalconCard(tagFalconCards) ;
+      renderFalconCard(tagFalconCards) ;
+      renderFalconCard(tagFalconCards) ;
+
+    }) ;
 
 
   </script>

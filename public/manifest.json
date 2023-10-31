@@ -1,7 +1,8 @@
 {
   "name": "signpost.Falcon",
   "short_name": "signpost.Falcon",
-  "icons": [{
+  "icons": [
+    {
     "src": "images/icons/internet-1616.png",
       "sizes": "16x16",
       "type": "image/png"
@@ -30,7 +31,7 @@
   "theme_color": "#2F3BA2",
 
   "share_target": {
-    "action": "http://127.0.0.1:8080/",
+    "action": "https://alexzhangmaker.github.io/signpost.Falcon/public/index.html",
     "enctype": "multipart/form-data",
     "method": "POST",
     "params": {

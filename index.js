@@ -22,13 +22,12 @@ const app = express();
 app.use(express.static('public'))
 app.use(express.json());
 
-//urlSignpost = "https://gcrreaderservice-lfmunwcvva-as.a.run.app/"
 const urlSignpost = process.env.urlSignpost;//'http://127.0.0.1:8080/' ;
 const projectId = process.env.SignpostGoogleProjectId;//'athena-396606';
 
 
 const userID = 'alexszhang@gmail.com' ;
-const port = parseInt(process.env.SignpostServerPort);
+const port = parseInt(process.env.FalconServerPort);
 
 
 

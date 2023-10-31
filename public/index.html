@@ -515,200 +515,168 @@
   </div>
 </div>
 
-  <script>
+<script src='./js/mockupJSON.js'></script>
+<script>
+  
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/js/PWA_sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+      });
+  });
+}
     
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-              navigator.serviceWorker.register('/js/PWA_sw.js').then(function(registration) {
-                  // Registration was successful
-                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
-              }, function(err) {
-                  // registration failed :(
-                  console.log('ServiceWorker registration failed: ', err);
-              });
-          });
-      }
-      
-  </script>
+</script>
 
-  <script>
+<script>
 
 
-    function renderFalconCard(tagCardContainer,jsonCard={}){
-      let cCardHTML = `
+  function renderFalconCard(tagCardContainer,jsonCard={}){
+    let cCardHTML = `
+      <div class="card border-success">
+          <div class="card-header">Featured</div>
+          <div class="card-body">
+              <h5 class="card-title">NASA Launched Solar Probe</h5>
+              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+          <div class="card-footer text-muted">3 years ago</div>
+      </div>
+    ` ;
+
+    let tagFalconCard = document.createElement('div') ;
+    tagCardContainer.appendChild(tagFalconCard) ;
+    tagFalconCard.classList.add('col') ;
+    tagFalconCard.innerHTML = cCardHTML ;
+    return tagFalconCard ;
+
+  }
+
+
+function renderFalconIncomeCard(tagCardContainer,jsonIncome={}){
+  let cHTML = `
         <div class="card border-success">
-            <div class="card-header">Featured</div>
-            <div class="card-body">
-                <h5 class="card-title">NASA Launched Solar Probe</h5>
-                <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
-                <a href="#" class="btn btn-primary">Know more</a>
+          <div class="card-header signpostFlex">
+            <div>
+              <i class="bi-currency-exchange" style="font-size: 24px;"></i>
+              <span>当月收入</span>
             </div>
-            <div class="card-footer text-muted">3 years ago</div>
+            <div>
+              <span>till ${jsonIncome.date}</span>
+              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+            </div>
+  
+          </div>
+  
+          <div class="card-body">
+              <p class="card-text">detailed income</p>
+              <div class="table-responsive overflow-auto"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Income</th>
+                            <th>Source</th>
+                            <th>Class</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>2023/10/05</td>
+                          <td>THB 12,000</td>
+                          <td>Arise Condo</td>
+                          <td>Rental</td>
+                          <td>done</td>
+                        </tr>
+                        <tr>
+                          <td>2023/10/12</td>
+                          <td>$ 100.00</td>
+                          <td>Realty Income</td>
+                          <td>Devidend</td>
+                          <td>done</td>
+
+                        </tr>
+                        <tr style="color: gold;">
+                          <td>2023/10/31</td>
+                          <td>$ 100.00</td>
+                          <td>WPC</td>
+                          <td>Devidend</td>
+                          <td>scheduled</td>
+                        </tr>
+                        <tr style="color: gold;">
+                          <td>2023/10/31</td>
+                          <td>THB 15,000.00</td>
+                          <td>Arise Condo</td>
+                          <td>Rental</td>
+                          <td>scheduled</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+          </div>
+          <div class="card-footer text-muted signpostFlex">
+            <span style="font-size: 12px;">2023/10/29</span>
+            <div>
+              <i class="bi-info-circle" style="font-size: 18px;"></i>   
+            </div>
+          </div>
         </div>
-      ` ;
+  ` ;
+  let tagCard = document.createElement('div') ;
+  tagCardContainer.appendChild(tagCard) ;
+  tagCard.classList.add('col') ;
+  tagCard.classList.add('falconCard') ;
 
-      let tagFalconCard = document.createElement('div') ;
-      tagCardContainer.appendChild(tagFalconCard) ;
-      tagFalconCard.classList.add('col') ;
-      tagFalconCard.innerHTML = cCardHTML ;
-      return tagFalconCard ;
+  tagCard.classList.add('fcMonthlyIncome') ;
+  tagCard.innerHTML = cHTML ;
 
+  let tagTblBody = tagCard.querySelector('tbody') ;
+
+  for(let i=0;i<jsonIncome.incomes.length;i++){
+    let tagRow = document.createElement('tr') ;
+    tagTblBody.appendChild(tagRow) ;
+    tagRow.innerHTML=`
+          <tr>
+            <td>${jsonIncome.incomes[i].date}</td>
+            <td>${jsonIncome.incomes[i].currency} ${jsonIncome.incomes[i].income}</td>
+            <td>${jsonIncome.incomes[i].source}</td>
+            <td>${jsonIncome.incomes[i].class}</td>
+            <td>${jsonIncome.incomes[i].status}</td>
+          </tr>
+    ` ;
+    if(jsonIncome.incomes[i].status!='collected'){
+      tagRow.style.color="blue" ;
     }
-
-    /*
-    let jsonIncome={
-        "date":"2023/10/31",
-        "incomes":[
-          {
-            "date":"2023/10/01",
-            "income":200.00,
-            "currency":"THB",
-            "source":"Arise Condo",
-            "class":"Rental",
-            "status":"done"
-          }
-        ]
-      } ;
-    */
-    function renderFalconIncomeCard(tagCardContainer,jsonIncome={}){
-      let cHTML = `
-            <div class="card border-success">
-              <div class="card-header signpostFlex">
-                <div>
-                  <i class="bi-currency-exchange" style="font-size: 24px;"></i>
-                  <span>当月收入</span>
-                </div>
-                <div>
-                  <span>till ${jsonIncome.date}</span>
-                  <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
-                </div>
-      
-              </div>
-      
-              <div class="card-body">
-                  <p class="card-text">detailed income</p>
-                  <div class="table-responsive overflow-auto"> 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Income</th>
-                                <th>Source</th>
-                                <th>Class</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              <td>2023/10/05</td>
-                              <td>THB 12,000</td>
-                              <td>Arise Condo</td>
-                              <td>Rental</td>
-                              <td>done</td>
-                            </tr>
-                            <tr>
-                              <td>2023/10/12</td>
-                              <td>$ 100.00</td>
-                              <td>Realty Income</td>
-                              <td>Devidend</td>
-                              <td>done</td>
-
-                            </tr>
-                            <tr style="color: gold;">
-                              <td>2023/10/31</td>
-                              <td>$ 100.00</td>
-                              <td>WPC</td>
-                              <td>Devidend</td>
-                              <td>scheduled</td>
-                            </tr>
-                            <tr style="color: gold;">
-                              <td>2023/10/31</td>
-                              <td>THB 15,000.00</td>
-                              <td>Arise Condo</td>
-                              <td>Rental</td>
-                              <td>scheduled</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> 
-              </div>
-              <div class="card-footer text-muted signpostFlex">
-                <span style="font-size: 12px;">2023/10/29</span>
-                <div>
-                  <i class="bi-info-circle" style="font-size: 18px;"></i>   
-                </div>
-              </div>
-            </div>
-      ` ;
-      let tagCard = document.createElement('div') ;
-      tagCardContainer.appendChild(tagCard) ;
-      tagCard.classList.add('col') ;
-      tagCard.classList.add('falconCard') ;
-
-      tagCard.classList.add('fcMonthlyIncome') ;
-      tagCard.innerHTML = cHTML ;
-
-      let tagTblBody = tagCard.querySelector('tbody') ;
-
-      for(let i=0;i<jsonIncome.incomes.length;i++){
-        let tagRow = document.createElement('tr') ;
-        tagTblBody.appendChild(tagRow) ;
-        tagRow.innerHTML=`
-              <tr>
-                <td>${jsonIncome.incomes[i].date}</td>
-                <td>${jsonIncome.incomes[i].currency} ${jsonIncome.incomes[i].income}</td>
-                <td>${jsonIncome.incomes[i].source}</td>
-                <td>${jsonIncome.incomes[i].class}</td>
-                <td>${jsonIncome.incomes[i].status}</td>
-              </tr>
-        ` ;
-        if(jsonIncome.incomes[i].status!='collected'){
-          tagRow.style.color="blue" ;
-        }
-      }
+  }
 
 
-    }
+}
 
-    document.addEventListener('DOMContentLoaded',(event)=>{
-      let tagFalconCards = document.querySelector('.falconCards') ;
-      renderFalconCard(tagFalconCards) ;
-      renderFalconCard(tagFalconCards) ;
-      renderFalconCard(tagFalconCards) ;
-      renderFalconCard(tagFalconCards) ;
-      renderFalconCard(tagFalconCards) ;
+  document.addEventListener('DOMContentLoaded',(event)=>{
+    let tagFalconCards = document.querySelector('.falconCards') ;
+    renderFalconCard(tagFalconCards) ;
+    renderFalconCard(tagFalconCards) ;
+    renderFalconCard(tagFalconCards) ;
+    renderFalconCard(tagFalconCards) ;
+    renderFalconCard(tagFalconCards) ;
 
-      let jsonIncome={
-        "date":"2023/10/31",
-        "incomes":[
-          {
-            "date":"2023/10/01",
-            "income":200.00,
-            "currency":"THB",
-            "source":"Arise Condo",
-            "class":"Rental",
-            "status":"collected"
-          },{
-            "date":"2023/10/01",
-            "income":200.00,
-            "currency":"USD",
-            "source":"PGX",
-            "class":"Devidend",
-            "status":"scheduled"
-          }
-        ]
-      } ;
-      renderFalconIncomeCard(tagFalconCards,jsonIncome) ;
+    
+    renderFalconIncomeCard(tagFalconCards,jsonGlobalIncome) ;
 
-      let tagBTN= document.querySelector('#idBTNNewSpending') ;
-      tagBTN.addEventListener('click',(event)=>{
-        var myModal = new bootstrap.Modal(document.getElementById('myModal'))
-        myModal.show();
-      }) ;
-
+    let tagBTN= document.querySelector('#idBTNNewSpending') ;
+    tagBTN.addEventListener('click',(event)=>{
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+      myModal.show();
     }) ;
 
+  }) ;
 
-  </script>
+
+</script>
 </body>
 </html>

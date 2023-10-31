@@ -30,6 +30,16 @@
       align-items: normal;
       align-content: normal;
     }
+
+
+    .falconCard .table-responsive{
+      max-height: 200px;
+    }
+
+    .falconButton:hover{
+      cursor: pointer;
+    }
+
   </style>
 
 </head>
@@ -60,7 +70,7 @@
   <div class="m-4">
     <div class="row row-cols-1 row-cols-md-2 g-4 falconCards" >
 
-      <div class='col fcPortfolio'>
+      <div class='col fcPortfolio falconCard'>
         <div class="card border-success">
           <div class="card-header signpostFlex">
             <div>
@@ -136,7 +146,7 @@
         </div>
       </div>
           
-      <div class='col fcAccount'>
+      <div class='col fcAccount falconCard'>
         <div class="card border-success">
           <div class="card-header signpostFlex">
             <div>
@@ -221,7 +231,7 @@
         </div>
       </div>
       
-      <div class='col fcExpenditure'>
+      <div class='col fcExpenditure falconCard'>
         <div class="card border-success">
           <div class="card-header signpostFlex">
             <div>
@@ -316,7 +326,7 @@
       </div>
 
 
-      <div class='col fcExpenditure'>
+      <div class='col fcExpenditure falconCard'>
         <div class="card border-success">
           <div class="card-header signpostFlex">
             <div><i class="bi-currency-exchange" style="font-size: 24px;"></i></div>
@@ -411,14 +421,14 @@
           <div class="card-footer text-muted signpostFlex">
             <span style="font-size: 12px;">2023/10/29</span>
             <div>
-            <i class="bi-plus-square" style="font-size: 18px;"></i>   
-            <i class="bi-check-square" style="font-size: 18px;"></i>         
+            <i class="bi-plus-square falconButton" id="idBTNNewSpending"></i>   
+            <i class="bi-check-square"></i>         
           </div>
           </div>
         </div>
       </div>
 
-      <div class='col fcMonthlyBalance'>
+      <div class='col fcMonthlyBalance falconCard'>
         <div class="card border-success">
           <div class="card-header signpostFlex">
             <div>
@@ -481,80 +491,29 @@
         </div>
       </div>
 
-      <div class='col fcMonthlyIncome'>
-        <div class="card border-success">
-          <div class="card-header signpostFlex">
-            <div>
-              <i class="bi-currency-exchange" style="font-size: 24px;"></i>
-              <span>当月收入</span>
-            </div>
-            <div>
-              <span>till 2023/10/21</span>
-              <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
-            </div>
-  
-          </div>
-  
-          <div class="card-body">
-              <p class="card-text">NASA launched Parker space probe in 2018 with the mission of making observations of the outer corona of the Sun. It is the first-ever mission to "touch" the Sun.</p>
-              <div class="table-responsive"> 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Income</th>
-                            <th>Source</th>
-                            <th>Class</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td>2023/10/05</td>
-                          <td>THB 12,000</td>
-                          <td>Arise Condo</td>
-                          <td>Rental</td>
-                          <td>done</td>
-                        </tr>
-                        <tr>
-                          <td>2023/10/12</td>
-                          <td>$ 100.00</td>
-                          <td>Realty Income</td>
-                          <td>Devidend</td>
-                          <td>done</td>
 
-                        </tr>
-                        <tr style="color: gold;">
-                          <td>2023/10/31</td>
-                          <td>$ 100.00</td>
-                          <td>WPC</td>
-                          <td>Devidend</td>
-                          <td>scheduled</td>
-                        </tr>
-                        <tr style="color: gold;">
-                          <td>2023/10/31</td>
-                          <td>THB 15,000.00</td>
-                          <td>Arise Condo</td>
-                          <td>Rental</td>
-                          <td>scheduled</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> 
-          </div>
-          <div class="card-footer text-muted signpostFlex">
-            <span style="font-size: 12px;">2023/10/29</span>
-            <div>
-              <i class="bi-info-circle" style="font-size: 18px;"></i>   
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
 </div>
 
-
+<div id="myModal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <p>Do you want to save changes to this document before closing?</p>
+              <p class="text-secondary"><small>If you don't save, your changes will be lost.</small></p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+      </div>
+  </div>
+</div>
 
   <script>
     /*
@@ -573,6 +532,8 @@
   </script>
 
   <script>
+
+
     function renderFalconCard(tagCardContainer,jsonCard={}){
       let cCardHTML = `
         <div class="card border-success">
@@ -594,6 +555,121 @@
 
     }
 
+    /*
+    let jsonIncome={
+        "date":"2023/10/31",
+        "incomes":[
+          {
+            "date":"2023/10/01",
+            "income":200.00,
+            "currency":"THB",
+            "source":"Arise Condo",
+            "class":"Rental",
+            "status":"done"
+          }
+        ]
+      } ;
+    */
+    function renderFalconIncomeCard(tagCardContainer,jsonIncome={}){
+      let cHTML = `
+            <div class="card border-success">
+              <div class="card-header signpostFlex">
+                <div>
+                  <i class="bi-currency-exchange" style="font-size: 24px;"></i>
+                  <span>当月收入</span>
+                </div>
+                <div>
+                  <span>till ${jsonIncome.date}</span>
+                  <i class="bi-graph-up" style="color: orangered;font-size: 24px;"></i>
+                </div>
+      
+              </div>
+      
+              <div class="card-body">
+                  <p class="card-text">detailed income</p>
+                  <div class="table-responsive overflow-auto"> 
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Income</th>
+                                <th>Source</th>
+                                <th>Class</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>2023/10/05</td>
+                              <td>THB 12,000</td>
+                              <td>Arise Condo</td>
+                              <td>Rental</td>
+                              <td>done</td>
+                            </tr>
+                            <tr>
+                              <td>2023/10/12</td>
+                              <td>$ 100.00</td>
+                              <td>Realty Income</td>
+                              <td>Devidend</td>
+                              <td>done</td>
+
+                            </tr>
+                            <tr style="color: gold;">
+                              <td>2023/10/31</td>
+                              <td>$ 100.00</td>
+                              <td>WPC</td>
+                              <td>Devidend</td>
+                              <td>scheduled</td>
+                            </tr>
+                            <tr style="color: gold;">
+                              <td>2023/10/31</td>
+                              <td>THB 15,000.00</td>
+                              <td>Arise Condo</td>
+                              <td>Rental</td>
+                              <td>scheduled</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
+              </div>
+              <div class="card-footer text-muted signpostFlex">
+                <span style="font-size: 12px;">2023/10/29</span>
+                <div>
+                  <i class="bi-info-circle" style="font-size: 18px;"></i>   
+                </div>
+              </div>
+            </div>
+      ` ;
+      let tagCard = document.createElement('div') ;
+      tagCardContainer.appendChild(tagCard) ;
+      tagCard.classList.add('col') ;
+      tagCard.classList.add('falconCard') ;
+
+      tagCard.classList.add('fcMonthlyIncome') ;
+      tagCard.innerHTML = cHTML ;
+
+      let tagTblBody = tagCard.querySelector('tbody') ;
+
+      for(let i=0;i<jsonIncome.incomes.length;i++){
+        let tagRow = document.createElement('tr') ;
+        tagTblBody.appendChild(tagRow) ;
+        tagRow.innerHTML=`
+              <tr>
+                <td>${jsonIncome.incomes[i].date}</td>
+                <td>${jsonIncome.incomes[i].currency} ${jsonIncome.incomes[i].income}</td>
+                <td>${jsonIncome.incomes[i].source}</td>
+                <td>${jsonIncome.incomes[i].class}</td>
+                <td>${jsonIncome.incomes[i].status}</td>
+              </tr>
+        ` ;
+        if(jsonIncome.incomes[i].status!='collected'){
+          tagRow.style.color="blue" ;
+        }
+      }
+
+
+    }
+
     document.addEventListener('DOMContentLoaded',(event)=>{
       let tagFalconCards = document.querySelector('.falconCards') ;
       renderFalconCard(tagFalconCards) ;
@@ -601,6 +677,34 @@
       renderFalconCard(tagFalconCards) ;
       renderFalconCard(tagFalconCards) ;
       renderFalconCard(tagFalconCards) ;
+
+      let jsonIncome={
+        "date":"2023/10/31",
+        "incomes":[
+          {
+            "date":"2023/10/01",
+            "income":200.00,
+            "currency":"THB",
+            "source":"Arise Condo",
+            "class":"Rental",
+            "status":"collected"
+          },{
+            "date":"2023/10/01",
+            "income":200.00,
+            "currency":"USD",
+            "source":"PGX",
+            "class":"Devidend",
+            "status":"scheduled"
+          }
+        ]
+      } ;
+      renderFalconIncomeCard(tagFalconCards,jsonIncome) ;
+
+      let tagBTN= document.querySelector('#idBTNNewSpending') ;
+      tagBTN.addEventListener('click',(event)=>{
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+        myModal.show();
+      }) ;
 
     }) ;
 

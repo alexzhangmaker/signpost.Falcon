@@ -1001,14 +1001,19 @@ function renderExpenditureCard(tagCardContainer,jsonExpenditure={}){
   }
 }
 
-document.addEventListener('DOMContentLoaded',(event)=>{
+document.addEventListener('DOMContentLoaded',async (event)=>{
   let tagFalconCards = document.querySelector('.falconCards') ;
   tagFalconCards.innerHTML = '' ;
   
   renderPortfolioCard(tagFalconCards,jsonGlobalPortfolio) ;
   renderAccountCard(tagFalconCards,jsonGlobalAccount) ;
 
-  renderFalconIncomeCard(tagFalconCards,jsonGlobalIncome) ;
+  let jsonURL = `http://127.0.0.1:8080/json?mm=07`;
+  const response = await fetch(jsonURL);
+  const jsonIncomeStream = await response.json();
+  console.log(JSON.stringify(jsonIncomeStream,null,3)) ;
+  renderFalconIncomeCard(tagFalconCards,jsonIncomeStream/*jsonGlobalIncome*/) ;
+
   renderExpenditureCard(tagFalconCards,jsonGlobalExpenditure) ;
   let tagBTN= document.querySelector('#idBTNNewSpending') ;
   tagBTN.addEventListener('click',(event)=>{

@@ -134,5 +134,5 @@ async function runInsert() {
   }
 }
 // Run the function and handle any errors
-runInsert().catch(console.dir);
+//runInsert().catch(console.dir);
 

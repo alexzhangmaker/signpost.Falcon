@@ -69,7 +69,6 @@ const jsonGlobalAccount={
             "value":102000.0
         }
     ]
-
 } ; 
 
 const jsonGlobalExpenditure={

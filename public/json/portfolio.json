@@ -1,0 +1,77 @@
+{
+    "accounts":[
+        {
+            "general":{
+                "owner":"alexszhang@gmail.com",
+                "name":"IBKR-U20987",
+                "bookvalue_CNY":2000,
+                "bookvalue_USD":1000,
+                "bookvalue_HKD":1800,
+                "bookvalue_AUD":1800,
+                "bookvalue_GBP":1800,
+                "cash_CNY":1500,
+                "cash_USD":0,
+                "cash_HKD":1200,
+                "cash_AUD":0,
+                "cash_GBP":1200,
+                "debt_CNY":0,
+                "debt_USD":0,
+                "debt_HKD":0,
+                "debt_AUD":0,
+                "debt_GBP":0
+            },
+            "holdings":[
+                {
+                    "ticker":"SH601318",
+                    "company":"中国平安",
+                    "shares":1000,
+                    "cost":38.56,
+                    "currency":"CNY",
+                    "exchange":"CN"
+                },{
+                    "ticker":"O",
+                    "company":"Realty Income",
+                    "shares":1000,
+                    "cost":48.60,
+                    "currency":"USD",
+                    "exchange":"US"
+                },{
+                    "ticker":"00010",
+                    "company":"恒隆集团",
+                    "shares":2000,
+                    "cost":12.00,
+                    "currency":"HKD",
+                    "exchange":"HK"
+                },{
+                    "ticker":"HICL",
+                    "company":"HICL investment",
+                    "shares":1000,
+                    "cost":120.20,
+                    "currency":"GBP",
+                    "exchange":"LSEG"
+                },{
+                    "ticker":"ASX",
+                    "company":"ASX Exchange",
+                    "shares":1000,
+                    "cost":22.60,
+                    "currency":"AUD",
+                    "exchange":"ASX"
+                },{
+                    "ticker":"PGX",
+                    "company":"Invesco Preferred ETF",
+                    "shares":1000,
+                    "cost":10.60,
+                    "currency":"USD",
+                    "exchange":"US"
+                },{
+                    "ticker":"SZ000002",
+                    "company":"万科A",
+                    "shares":1000,
+                    "cost":10.60,
+                    "currency":"CNY",
+                    "exchange":"CN"
+                }
+            ]
+        }
+    ]
+}

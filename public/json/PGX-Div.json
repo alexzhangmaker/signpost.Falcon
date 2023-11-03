@@ -1,0 +1,92 @@
+[
+   {
+      "ExDividendDate": "2023-12-19",
+      "PayoutDate": "2023-12-23",
+      "CashAmount": "$0.06584**",
+      "Change": "unconfirmed/estimated"
+   },
+   {
+      "ExDividendDate": "2023-11-21",
+      "PayoutDate": "2023-11-25",
+      "CashAmount": "$0.06584**",
+      "Change": "unconfirmed/estimated"
+   },
+   {
+      "ExDividendDate": "2023-10-23",
+      "PayoutDate": "2023-10-27",
+      "CashAmount": "$0.06584",
+      "Change": "15.55%"
+   },
+   {
+      "ExDividendDate": "2023-09-18",
+      "PayoutDate": "2023-09-22",
+      "CashAmount": "$0.05698",
+      "Change": "-4.52%"
+   },
+   {
+      "ExDividendDate": "2023-08-21",
+      "PayoutDate": "2023-08-25",
+      "CashAmount": "$0.05968",
+      "Change": "-2.21%"
+   },
+   {
+      "ExDividendDate": "2023-07-24",
+      "PayoutDate": "2023-07-28",
+      "CashAmount": "$0.06103",
+      "Change": "-0.47%"
+   },
+   {
+      "ExDividendDate": "2023-06-20",
+      "PayoutDate": "2023-06-23",
+      "CashAmount": "$0.06132",
+      "Change": "1.41%"
+   },
+   {
+      "ExDividendDate": "2023-05-22",
+      "PayoutDate": "2023-05-26",
+      "CashAmount": "$0.06047",
+      "Change": "-3.39%"
+   },
+   {
+      "ExDividendDate": "2023-04-24",
+      "PayoutDate": "2023-04-28",
+      "CashAmount": "$0.06259",
+      "Change": "3.59%"
+   },
+   {
+      "ExDividendDate": "2023-03-20",
+      "PayoutDate": "2023-03-24",
+      "CashAmount": "$0.06042",
+      "Change": "3.74%"
+   },
+   {
+      "ExDividendDate": "2023-02-21",
+      "PayoutDate": "2023-02-24",
+      "CashAmount": "$0.05824",
+      "Change": "-4.21%"
+   },
+   {
+      "ExDividendDate": "2023-01-23",
+      "PayoutDate": "2023-01-27",
+      "CashAmount": "$0.0608",
+      "Change": "-0.82%"
+   },
+   {
+      "ExDividendDate": "2022-12-19",
+      "PayoutDate": "2022-12-23",
+      "CashAmount": "$0.0613",
+      "Change": "0.33%"
+   },
+   {
+      "ExDividendDate": "2022-11-21",
+      "PayoutDate": "2022-11-25",
+      "CashAmount": "$0.0611",
+      "Change": "0.66%"
+   },
+   {
+      "ExDividendDate": "2022-10-24",
+      "PayoutDate": "2022-10-28",
+      "CashAmount": "$0.0607",
+      "Change": "2.36%"
+   }
+]

@@ -1,0 +1,92 @@
+[
+   {
+      "ExDividendDate": "2023-12-30",
+      "PayoutDate": "2024-01-13",
+      "CashAmount": "$0.256**",
+      "Change": "unconfirmed/estimated"
+   },
+   {
+      "ExDividendDate": "2023-11-30",
+      "PayoutDate": "2023-12-15",
+      "CashAmount": "$0.256**",
+      "Change": "unconfirmed/estimated"
+   },
+   {
+      "ExDividendDate": "2023-10-31",
+      "PayoutDate": "2023-11-15",
+      "CashAmount": "$0.256",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2023-09-29",
+      "PayoutDate": "2023-10-13",
+      "CashAmount": "$0.256",
+      "Change": "0.20%"
+   },
+   {
+      "ExDividendDate": "2023-08-31",
+      "PayoutDate": "2023-09-15",
+      "CashAmount": "$0.2555",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2023-07-31",
+      "PayoutDate": "2023-08-15",
+      "CashAmount": "$0.2555",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2023-06-30",
+      "PayoutDate": "2023-07-14",
+      "CashAmount": "$0.2555",
+      "Change": "0.20%"
+   },
+   {
+      "ExDividendDate": "2023-05-31",
+      "PayoutDate": "2023-06-15",
+      "CashAmount": "$0.255",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2023-04-28",
+      "PayoutDate": "2023-05-15",
+      "CashAmount": "$0.255",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2023-03-31",
+      "PayoutDate": "2023-04-14",
+      "CashAmount": "$0.255",
+      "Change": "0.20%"
+   },
+   {
+      "ExDividendDate": "2023-02-28",
+      "PayoutDate": "2023-03-15",
+      "CashAmount": "$0.2545",
+      "Change": "2.41%"
+   },
+   {
+      "ExDividendDate": "2023-01-31",
+      "PayoutDate": "2023-02-15",
+      "CashAmount": "$0.2485",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2022-12-30",
+      "PayoutDate": "2023-01-13",
+      "CashAmount": "$0.2485",
+      "Change": "0.20%"
+   },
+   {
+      "ExDividendDate": "2022-11-30",
+      "PayoutDate": "2022-12-15",
+      "CashAmount": "$0.248",
+      "Change": ""
+   },
+   {
+      "ExDividendDate": "2022-10-31",
+      "PayoutDate": "2022-11-15",
+      "CashAmount": "$0.248",
+      "Change": ""
+   }
+]

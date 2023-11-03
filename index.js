@@ -20,6 +20,9 @@ const download = require('download');
 require('dotenv').config() ;
 
 
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://alexszhang:ChinaNO0001.@athenacluster0.ls5vshu.mongodb.net/?retryWrites=true&w=majority";
+
 
 const app = express();
 app.use(express.static('public'))
@@ -80,9 +83,6 @@ async function serveIncomeStream(req, res){
 
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://alexszhang:ChinaNO0001.@athenacluster0.ls5vshu.mongodb.net/?retryWrites=true&w=majority";
-
 
 
 
@@ -132,15 +132,7 @@ async function runQueryIncome(cMonth) {
           year: "2023",
           month:cMonth 
       };
-      /*
-      const options = {
-      // Sort returned documents in ascending order by title (A->Z)
-      sort: { title: 1 },
-      // Include only the `title` and `imdb` fields in each returned document
-      projection: { _id: 0, title: 1, imdb: 1 },
-      };
-      */
-      // Execute query 
+      
       const cursor = incomeStatement.find(query/*, options*/);
       // Print a message if no documents were found
       if ((await incomeStatement.countDocuments(query)) === 0) {

@@ -9,6 +9,12 @@ const fetch = require('node-fetch') ;
 let globalBrowwer = null ;
 let globalPage = null ;
 
+
+
+function _logJSON(jsonData){
+    console.log(JSON.stringify(jsonData,null,3)) ;
+}
+
 async function _initBrowser(){
     globalBrowwer = await puppeteer.launch({headless:"new"});
     globalPage = await globalBrowwer.newPage();
@@ -22,32 +28,35 @@ async function _exitBrowser(){
     globalPage = null ;
 }
 
-async function _fetchXQAPI(cTicker){
-    const RequestHeaders = new fetch.Headers({
-        "Accept": "application/json",
-        //"Authorization": `Bearer ${MASHERY_KEY}`,
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
-    });
-
+//nto working to xueqiu site
+//refer: https://stock.xueqiu.com/v5/stock/f10/hk/bonus.json?symbol=00010&size=10&page=1&extend=true
+async function _fetchXQJSONAPI(cTicker){
     let jsonDividends = {} ;
-    let cURL = `https://stock.xueqiu.com/v5/stock/f10/cn/bonus.json?symbol=${cTicker}&size=10&page=1&extend=true` ;
+    //let cURL = `https://stock.xueqiu.com/v5/stock/f10/cn/bonus.json?symbol=${cTicker}&size=10&page=1&extend=true` ;
+    let cURL='https://stock.xueqiu.com/v5/stock/f10/hk/bonus.json?symbol=00010&size=10&page=1&extend=true' ;
+    //let cURL = 'https://raw.githubusercontent.com/GoogleChrome/puppeteer/master/package.json';
+    await globalPage.goto(cURL, {waitUntil: 'networkidle0'});
 
-    const response = await fetch(cURL,{
-        headers:RequestHeaders
-    });
-
-    if(!response.ok){
-        console.log('error:'+JSON.stringify(response,null,3)) ;
-    }else{
-        let jsonData = await response.json() ;
-        console.log(JSON.stringify(jsonData,null,3)) ;
-        jsonDividends = jsonData ;
-    }
-
+    //I would leave this here as a fail safe
+     await globalPage.content(); 
+ 
+     innerText = await globalPage.evaluate(() =>  {
+         return JSON.parse(document.querySelector("body").innerText); 
+     }); 
+     //console.log(innerText);
+     _logJSON(innerText) ;
 
     return jsonDividends ;
 }
 
+
+async function tryPuppeteerJSON(){
+    await _initBrowser() ;
+    let jsonData = await _fetchXQJSONAPI('00010') ;
+    //console.log(JSON.stringify(jsonData,null,3)) ;
+    _logJSON(jsonData) ;
+    await _exitBrowser() ;
+}
 
 
 //https://xueqiu.com/snowman/S/00010/detail#/FHPS
@@ -393,3 +402,5 @@ async function doWork(){
 
 
 doWork() ;
+
+//tryPuppeteerJSON() ;

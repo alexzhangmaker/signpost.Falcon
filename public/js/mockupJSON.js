@@ -53,7 +53,7 @@ let jsonGlobalPortfolio={
 } ;
 
 
-const jsonGlobalAccount={
+const jsonGlobalMockAccount1={
     "date":"2023/10/31",
     "account":"海通证券" ,
     "pl_total":1000.21,
@@ -61,6 +61,61 @@ const jsonGlobalAccount={
         {
             "ticker":"HK00010",
             "company":"恒隆集团",
+            "shares":10000,
+            "cost":12.31,
+            "price":10.20,
+            "pl_total":-2100.0,
+            "pl_total_percent":-0.09,
+            "value":102000.0
+        },{
+            "ticker":"HK00010",
+            "company":"恒隆集团",
+            "shares":10000,
+            "cost":12.31,
+            "price":10.20,
+            "pl_total":-2100.0,
+            "pl_total_percent":-0.09,
+            "value":102000.0
+        },{
+            "ticker":"HK00010",
+            "company":"恒隆集团",
+            "shares":10000,
+            "cost":12.31,
+            "price":10.20,
+            "pl_total":-2100.0,
+            "pl_total_percent":-0.09,
+            "value":102000.0
+        }
+    ]
+} ; 
+
+
+const jsonGlobalMockAccount2={
+    "date":"2023/10/31",
+    "account":"盈透证券" ,
+    "pl_total":1000.21,
+    "holdings":[
+        {
+            "ticker":"O",
+            "company":"Realty Income",
+            "shares":10000,
+            "cost":12.31,
+            "price":10.20,
+            "pl_total":-2100.0,
+            "pl_total_percent":-0.09,
+            "value":102000.0
+        },{
+            "ticker":"BN",
+            "company":"Brookfield",
+            "shares":10000,
+            "cost":12.31,
+            "price":10.20,
+            "pl_total":-2100.0,
+            "pl_total_percent":-0.09,
+            "value":102000.0
+        },{
+            "ticker":"HK00388",
+            "company":"港交所",
             "shares":10000,
             "cost":12.31,
             "price":10.20,

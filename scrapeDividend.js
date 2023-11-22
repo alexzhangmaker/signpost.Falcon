@@ -28,26 +28,7 @@ async function _exitBrowser(){
     globalPage = null ;
 }
 
-//nto working to xueqiu site
-//refer: https://stock.xueqiu.com/v5/stock/f10/hk/bonus.json?symbol=00010&size=10&page=1&extend=true
-async function _fetchXQJSONAPI(cTicker){
-    let jsonDividends = {} ;
-    //let cURL = `https://stock.xueqiu.com/v5/stock/f10/cn/bonus.json?symbol=${cTicker}&size=10&page=1&extend=true` ;
-    let cURL='https://stock.xueqiu.com/v5/stock/f10/hk/bonus.json?symbol=00010&size=10&page=1&extend=true' ;
-    //let cURL = 'https://raw.githubusercontent.com/GoogleChrome/puppeteer/master/package.json';
-    await globalPage.goto(cURL, {waitUntil: 'networkidle0'});
 
-    //I would leave this here as a fail safe
-     await globalPage.content(); 
- 
-     innerText = await globalPage.evaluate(() =>  {
-         return JSON.parse(document.querySelector("body").innerText); 
-     }); 
-     //console.log(innerText);
-     _logJSON(innerText) ;
-
-    return jsonDividends ;
-}
 
 
 async function tryPuppeteerJSON(){
@@ -185,57 +166,6 @@ async function _parseDividendUS(){
     return jsonDividends ;   
 }
 
-/*
-process.on('message', async (message) => {
-    console.log(message) ;
-
-
-    switch(message.request){
-        case 'init':
-            await _initBrowser() ;
-            let jsonRespInit = {
-                'ack':'done',
-                'tickerID':message.tickerID,
-                'request':message.request
-            } ;
-            process.send(jsonRespInit);
-            break ;
-        case 'exit':
-            await _exitBrowser() ;
-            let jsonRespExit = {
-                'ack':'done',
-                'tickerID':message.tickerID,
-                'request':message.request
-            } ;
-            process.send(jsonRespExit);
-            break;
-        case 'fetchDevidend':
-            if(globalBrowwer==null){
-                let jsonRespFail = {
-                    'ack':'failed',
-                    'tickerID':message.tickerID,
-                    'request':message.request
-                } ;
-                process.send(jsonRespFail);
-                break ;
-            }
-            let jsonDefinition = await _fetchDividend(message.word) ;
-            let jsonRespWord = {
-                'ack':'done',
-                'tickerID':message.tickerID,
-                'request':message.request,
-                'result':jsonDefinition
-            } ;
-            process.send(jsonRespWord);
-            let cNow = new Date() ;
-            console.log('jsonRespWord to send:'+cNow.toTimeString()) ;
-            break;
-    }
-}) ;
-*/
-
-
-
 
 //https://stock.finance.sina.com.cn/hkstock/dividends/00010.html
 async function _fetchDividendHKSINA(cTicker){
@@ -346,7 +276,9 @@ async function _parseDividendUKFool(){
 
 }
 
-async function doWork(){
+
+
+async function updateDividend(){
 
     let cPortfolioFile = `./public/json/portfolio.json` ;
     let cPortfolio = fs.readFileSync(cPortfolioFile) ;
@@ -401,6 +333,5 @@ async function doWork(){
 
 
 
-doWork() ;
+//updateDividend() ;
 
-//tryPuppeteerJSON() ;

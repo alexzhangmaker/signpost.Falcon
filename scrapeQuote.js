@@ -3,13 +3,19 @@ const { URL } = require('url');
 const fse = require('fs-extra'); // v 5.0.0
 const path = require('path');
 var fs = require('fs');
-
 const fetch = require('node-fetch') ;
+const Decimal = require('decimal.js');
+
+const portfolioDB = require('better-sqlite3')('./public/SQLiteDB/PortfolioDB.db', { verbose: console.log });
+
 
 let globalBrowwer = null ;
 let globalPage = null ;
 
 
+function cleanFloat(cFloat){
+    return cFloat.replace(',','') ;
+}
 
 function _logJSON(jsonData){
     console.log(JSON.stringify(jsonData,null,3)) ;
@@ -64,13 +70,12 @@ async function _parseQuoteYahoo_US(){
         let cCleanChange = cChange.replace("(",'').replace(")",'') ;
         let jsonQuote={
             "ticker":'',
-            "Quote":parseFloat(tagFinStreamers[0].innerText),
-            "change":parseFloat(tagFinStreamers[1].innerText),
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
+            "change":tagFinStreamers[1].innerText,
             "changePer":parseFloat(cCleanChange)
         }
         return jsonQuote ;   
     }
-    
     return {} ;
 }
 
@@ -97,7 +102,7 @@ async function _parseQuoteYahoo_HK(){
         let cCleanChange = cChange.replace("(",'').replace(")",'') ;
         let jsonQuote={
             "ticker":'',
-            "Quote":parseFloat(tagFinStreamers[0].innerText),
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
             "change":parseFloat(tagFinStreamers[1].innerText),
             "changePer":parseFloat(cCleanChange)
         }
@@ -108,7 +113,7 @@ async function _parseQuoteYahoo_HK(){
 }
 
 
-//https://finance.yahoo.com/quote/HICL.L?p=HICL.L
+//https://finance.yahoo.com/quote/HICL.L
 async function _fetchQuoteYahoo_LSE(cTicker){
 
     let cURL = `https://finance.yahoo.com/quote/HICL.L?p=${cTicker}.L` ;
@@ -131,7 +136,7 @@ async function _parseQuoteYahoo_LSE(){
         let cCleanChange = cChange.replace("(",'').replace(")",'') ;
         let jsonQuote={
             "ticker":'',
-            "Quote":parseFloat(tagFinStreamers[0].innerText),
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
             "change":parseFloat(tagFinStreamers[1].innerText),
             "changePer":parseFloat(cCleanChange)
         }
@@ -164,7 +169,7 @@ async function _parseQuoteYahoo_SZ(){
         let cCleanChange = cChange.replace("(",'').replace(")",'') ;
         let jsonQuote={
             "ticker":'',
-            "Quote":parseFloat(tagFinStreamers[0].innerText),
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
             "change":parseFloat(tagFinStreamers[1].innerText),
             "changePer":parseFloat(cCleanChange)
         }
@@ -176,8 +181,6 @@ async function _parseQuoteYahoo_SZ(){
 
 
 //https://finance.yahoo.com/quote/600900.SS
-//?p=600900.SS
-//&.tsrc=fin-srch
 async function _fetchQuoteYahoo_SH(cTicker){
 
     let cURL = `https://finance.yahoo.com/quote/${cTicker}.SS` ;
@@ -200,7 +203,7 @@ async function _parseQuoteYahoo_SH(){
         let cCleanChange = cChange.replace("(",'').replace(")",'') ;
         let jsonQuote={
             "ticker":'',
-            "Quote":parseFloat(tagFinStreamers[0].innerText),
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
             "change":parseFloat(tagFinStreamers[1].innerText),
             "changePer":parseFloat(cCleanChange)
         }
@@ -209,6 +212,45 @@ async function _parseQuoteYahoo_SH(){
     
     return {} ;
 }
+
+
+//https://finance.yahoo.com/quote/ASX.AX
+async function _fetchQuoteYahoo(cTicker){
+
+    let cURL = `https://finance.yahoo.com/quote/${cTicker}` ;
+    console.log(`going to fetchQuote: ${cURL}`) ;
+    //await page.setJavaScriptEnabled(false) ;
+    await globalPage.goto(cURL, {waitUntil: 'domcontentloaded'});
+    let jsonQuote = await globalPage.evaluate(_parseQuoteYahoo);
+    jsonQuote.ticker = cTicker ;
+
+    return jsonQuote ;
+}
+
+async function _parseQuoteYahoo(){
+    let cssRemove=[] ;
+    
+    let tagQuoteHeaderInfo=document.querySelector('#quote-header-info') ;
+    let tagFinStreamers = tagQuoteHeaderInfo.querySelectorAll('fin-streamer') ;
+
+    if(tagFinStreamers.length>=3){
+        let cChange= tagFinStreamers[2].innerText ;
+        let cCleanChange = cChange.replace("(",'').replace(")",'') ;
+        let jsonQuote={
+            "ticker":'',
+            "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
+            "change":parseFloat(tagFinStreamers[1].innerText),
+            "changePer":parseFloat(cCleanChange)
+        }
+        return jsonQuote ;   
+    }
+    
+    return {} ;
+}
+
+
+
+
 
 async function updatePortfolio(){
 
@@ -225,32 +267,52 @@ async function updatePortfolio(){
             if(jsonPortfolio.accounts[i].holdings[j].class!='share')continue ;
 
             let cTicker = jsonPortfolio.accounts[i].holdings[j].ticker ;
-            let jsonQuote = {} ;
-            switch(jsonPortfolio.accounts[i].holdings[j].exchange){
-                case "US":jsonQuote = await _fetchQuoteYahoo_US(cTicker) ;break ;
-                case "HK":jsonQuote = await _fetchQuoteYahoo_HK(cTicker) ;break ;
-                case "LSE":jsonQuote = await _fetchQuoteYahoo_LSE(cTicker) ;break ;
-                case "SZ":jsonQuote = await _fetchQuoteYahoo_SZ(cTicker) ;break ;
-                case "SH":jsonQuote = await _fetchQuoteYahoo_SH(cTicker) ;break ;
-            }
+            let jsonQuote = await _fetchQuoteYahoo(cTicker) ;
+            
             console.log(JSON.stringify(jsonQuote,null,3)) ;
-            jsonPortfolio.accounts[i].holdings[j].price = jsonQuote.Quote ;
-            jsonPortfolio.accounts[i].holdings[j].value = jsonQuote.Quote*jsonPortfolio.accounts[i].holdings[j].shares ;
+            updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
         }
     }
     
     await _exitBrowser() ;
     console.log(JSON.stringify(jsonPortfolio,null,3)) ;
     let cData = JSON.stringify(jsonPortfolio,null,3) ;
-    fs.writeFileSync(cPortfolioFile,cData) ;
+    //fs.writeFileSync(cPortfolioFile,cData) ;
 }
 
 
+async function updatePortfolioAccount(cAccount){
 
-//doWork() ;
+    let cPortfolioFile = `./public/json/portfolio.json` ;
+    let cPortfolio = fs.readFileSync(cPortfolioFile) ;
+    let jsonPortfolio = JSON.parse(cPortfolio) ;
+    console.log(JSON.stringify(jsonPortfolio,null,3)) ;
 
-//tryPuppeteerJSON() ;
+    await _initBrowser() ;
 
+    for(let i=0;i<jsonPortfolio.accounts.length;i++){
+        if(jsonPortfolio.accounts[i].general.account==cAccount){
+            for(let j=0;j<jsonPortfolio.accounts[i].holdings.length;j++){
+                if(jsonPortfolio.accounts[i].holdings[j].class!='share')continue ;
+    
+                let cTicker = jsonPortfolio.accounts[i].holdings[j].ticker ;
+                let jsonQuote = await _fetchQuoteYahoo(cTicker) ;
+                
+                console.log(JSON.stringify(jsonQuote,null,3)) ;
+                updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
+            }
+            break ;
+        }
+    }
+    
+    await _exitBrowser() ;
+    console.log(JSON.stringify(jsonPortfolio,null,3)) ;
+    let cData = JSON.stringify(jsonPortfolio,null,3) ;
+    //fs.writeFileSync(cPortfolioFile,cData) ;
+}
+
+
+/*
 async function tryQuote(){
     await _initBrowser() ;
 
@@ -287,7 +349,151 @@ async function tryQuote(){
     await _exitBrowser() ;
 
 }
-
+*/
 //tryQuote() ;
 
-updatePortfolio() ;
+
+function loadAccountSQLite(){
+    let cStmt = `
+        INSERT INTO accounts (
+            accountNO,owner, bookvalue_CNY,bookvalue_USD,bookvalue_HKD,bookvalue_AUD,bookvalue_GBP,cash_CNY,cash_USD,cash_HKD,cash_AUD,cash_GBP,debt_CNY,debt_USD,debt_HKD,debt_AUD,debt_GBP,totalPL,totalPL_Per) 
+            VALUES (@accountNO, @owner,
+                                @bookvalue_CNY,
+                                @bookvalue_USD,
+                                @bookvalue_HKD,
+                                @bookvalue_AUD,
+                                @bookvalue_GBP,
+                                @cash_CNY,
+                                @cash_USD,
+                                @cash_HKD,
+                                @cash_AUD,
+                                @cash_GBP,
+                                @debt_CNY,
+                                @debt_USD,
+                                @debt_HKD,
+                                @debt_AUD,
+                                @debt_GBP,
+                                @totalPL,
+                                @totalPL_Per)
+    ` ;
+    const stmt = portfolioDB.prepare(cStmt);
+    let jsonAccount={
+            "accountNO": "IBKR-6325",
+            "owner": "alexszhang@gmail.com",
+            "bookvalue_CNY": 0,
+            "bookvalue_USD": 0,
+            "bookvalue_HKD": 0,
+            "bookvalue_AUD": 0,
+            "bookvalue_GBP": 0,
+            "cash_CNY": 0,
+            "cash_USD": 0,
+            "cash_HKD": 0,
+            "cash_AUD": 0,
+            "cash_GBP": 0,
+            "debt_CNY": 0,
+            "debt_USD": 0,
+            "debt_HKD": 0,
+            "debt_AUD": 0,
+            "debt_GBP": 0,
+            "totalPL": 0,
+            "totalPL_Per":0
+    } ;
+    stmt.run(jsonAccount);
+}
+
+
+function addHolding(account,jsonHolding){
+    let cStmt = `
+    INSERT INTO holdings (accountNO,ticker,company,shares,cost,currency,exchange,price,pl_total,pl_total_percent,value,class) VALUES ( 
+                            @accountNO,@ticker,@company,@shares,@cost,@currency,@exchange,@price,@pl_total,@pl_total_percent,@value,@class)
+    ` ;
+    const stmt = portfolioDB.prepare(cStmt);
+    let jsonHoldingDB={
+            "accountNO": account,
+            "ticker": jsonHolding.ticker,
+            "company": jsonHolding.company,
+            "shares": jsonHolding.shares,
+            "cost": jsonHolding.cost,
+            "currency": jsonHolding.currency,
+            "exchange": jsonHolding.exchange,
+            "price": jsonHolding.price,
+            "pl_total": jsonHolding.pl_total,
+            "pl_total_percent": jsonHolding.pl_total_percent,
+            "value": jsonHolding.value,
+            "class": jsonHolding.class
+    } ;
+    stmt.run(jsonHoldingDB);
+}
+
+function batchLoadHolding(cAccount){
+    let cPortfolioFile='./public/json/portfolio.json' ;
+    let cPortfolioData = fs.readFileSync(cPortfolioFile) ;
+    let jsonPortfolio = JSON.parse(cPortfolioData) ;
+
+    for(let i=0;i<jsonPortfolio.accounts.length;i++){
+        if(jsonPortfolio.accounts[i].general.account == cAccount){
+            for(let j=0;j<jsonPortfolio.accounts[i].holdings.length;j++){
+                addHolding(jsonPortfolio.accounts[i].general.account,jsonPortfolio.accounts[i].holdings[j]) ;
+            }
+            break ;
+        }
+    }
+}
+
+
+function updateHolding_Quote(ticker,paraQuote){
+    //update holdings set price=50.00, value=50.00*shares,pl_total=(50-cost)*shares,pl_total_percent=(50/cost-1)*100 where ticker = 'BN'
+    let cStmt = `
+    update holdings set price=50.00, value=50.00*shares,pl_total=(50-cost)*shares,pl_total_percent=(50/cost-1)*100 where ticker = 'BN'
+    ` ;
+
+    const stmt = portfolioDB.prepare('SELECT shares,cost FROM holdings WHERE ticker = ?');
+    const holding = stmt.get(ticker);
+
+    console.log(holding); // => 2
+
+    let para={
+        price:paraQuote,
+        value:paraQuote*holding.shares,
+        pl_total:((paraQuote-holding.cost)*holding.shares).toFixed(2),
+        pl_total_percent:((paraQuote/holding.cost-1)*100).toFixed(2),
+        ticker:ticker
+    };
+    console.log(JSON.stringify(para,null,3)) ;
+    
+    const stmt2 = portfolioDB.prepare(`UPDATE holdings SET price = ?, value= ?, pl_total=?, pl_total_percent=? WHERE ticker = ?`); 
+    const updates = stmt2.run(para.price, para.value,para.pl_total,para.pl_total_percent,para.ticker);
+    
+
+}
+
+
+
+async function updateSingleHolding(ticker){
+
+    await _initBrowser() ;
+
+    let jsonQuote = await _fetchQuoteYahoo(ticker);
+    console.log(JSON.stringify(jsonQuote,null,3)) ;
+    updateHolding_Quote(ticker,jsonQuote.Quote) ;
+
+    await _exitBrowser() ;
+}
+
+
+
+
+//updateSingleHolding('ASX.AX') ;
+//updateSingleHolding('BAM') ;
+//updateSingleHolding('0010.HK') ;
+//updateSingleHolding('HICL.L') ;
+//updateSingleHolding('000002.SZ') ;
+//updateSingleHolding('600900.SS') ;
+//updateSingleHolding('K71U.SI') ;
+
+
+//updatePortfolio() ;
+
+//batchLoadHolding('IBKR-6325') ;
+
+updatePortfolioAccount('IBKR-3979') ;

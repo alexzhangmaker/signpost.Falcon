@@ -784,7 +784,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "share"
+               "class": "ETF"
             },
             {
                "ticker": "513050.SS",
@@ -797,7 +797,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "ETF"
             },
             {
                "ticker": "515080.SS",
@@ -823,7 +823,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "2318.HK",
@@ -913,7 +913,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "601336.SS",
@@ -939,7 +939,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "2318.HK",
@@ -1055,7 +1055,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "0700.HK",
@@ -1068,7 +1068,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "2318.HK",
@@ -1171,7 +1171,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "share"
+               "class": "ETF"
             },
             {
                "ticker": "000002.SZ",
@@ -1184,7 +1184,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "0700.HK",
@@ -1197,7 +1197,7 @@
                "pl_total": -2100,
                "pl_total_percent": -0.09,
                "value": 69200,
-               "class": "bond"
+               "class": "share"
             },
             {
                "ticker": "2318.HK",

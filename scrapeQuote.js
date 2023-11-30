@@ -7,7 +7,21 @@ const fetch = require('node-fetch') ;
 const Decimal = require('decimal.js');
 
 const portfolioDB = require('better-sqlite3')('./public/SQLiteDB/PortfolioDB.db', { verbose: console.log });
+const winston = require('winston');
 
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write all logs with importance level of `error` or less to `error.log`
+    // - Write all logs with importance level of `info` or less to `combined.log`
+    //
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' }),
+  ],
+});
 
 let globalBrowwer = null ;
 let globalPage = null ;
@@ -19,6 +33,12 @@ function cleanFloat(cFloat){
 
 function _logJSON(jsonData){
     console.log(JSON.stringify(jsonData,null,3)) ;
+}
+
+function _log(title,cMessage){
+    let cDate = new Date() ;
+    let cLogMessage=`${cDate.toLocaleString()}:${cMessage}` ;
+    logger.info(title, { message: cLogMessage });
 }
 
 async function _initBrowser(){
@@ -214,14 +234,57 @@ async function _parseQuoteYahoo_SH(){
 }
 
 
+//https://finance.yahoo.com/currencies/
+async function _fetchCurrencyRateYahoo(){
+    const cURL = `https://finance.yahoo.com/currencies/` ;
+    let jsonCurrencyRate={
+        "retCode":200
+    } ;
+
+    try {
+        await globalPage.goto(cURL, {waitUntil: 'domcontentloaded'});
+        // do what you have to do here
+    } catch (e) {
+        console.log('element probably not exists');
+        jsonCurrencyRate.retCode = 404 ;
+        return jsonQuote ;
+    }
+    
+    jsonCurrencyRate = await globalPage.evaluate(_parseCurrencyRateYahoo);
+
+    return jsonCurrencyRate ;
+}
+
+async function _parseCurrencyRateYahoo(){
+    //yfin-list  => table 
+}
+
+
+
 //https://finance.yahoo.com/quote/ASX.AX
 async function _fetchQuoteYahoo(cTicker){
 
     let cURL = `https://finance.yahoo.com/quote/${cTicker}` ;
-    console.log(`going to fetchQuote: ${cURL}`) ;
+    //console.log(`going to fetchQuote: ${cURL}`) ;
     //await page.setJavaScriptEnabled(false) ;
-    await globalPage.goto(cURL, {waitUntil: 'domcontentloaded'});
-    let jsonQuote = await globalPage.evaluate(_parseQuoteYahoo);
+    let jsonQuote={
+        "ticker":'',
+        "Quote":'',
+        "change":'',
+        "changePer":'',
+        "retCode":200
+    } ;
+    try {
+        await globalPage.goto(cURL, {waitUntil: 'domcontentloaded'});
+        // do what you have to do here
+    } catch (e) {
+        console.log('element probably not exists');
+        jsonQuote.retCode = 404 ;
+        jsonQuote.ticker = cTicker ;
+        return jsonQuote ;
+    }
+    
+    jsonQuote = await globalPage.evaluate(_parseQuoteYahoo);
     jsonQuote.ticker = cTicker ;
 
     return jsonQuote ;
@@ -240,7 +303,8 @@ async function _parseQuoteYahoo(){
             "ticker":'',
             "Quote":parseFloat(tagFinStreamers[0].innerText.replace(',','')),
             "change":parseFloat(tagFinStreamers[1].innerText),
-            "changePer":parseFloat(cCleanChange)
+            "changePer":parseFloat(cCleanChange),
+            "retCode":200
         }
         return jsonQuote ;   
     }
@@ -268,9 +332,15 @@ async function updatePortfolio(){
 
             let cTicker = jsonPortfolio.accounts[i].holdings[j].ticker ;
             let jsonQuote = await _fetchQuoteYahoo(cTicker) ;
-            
-            console.log(JSON.stringify(jsonQuote,null,3)) ;
-            updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
+            if(jsonQuote.retCode==200){
+                console.log(JSON.stringify(jsonQuote,null,3)) ;
+                updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
+            }else{
+                //logger() ;
+                logger.log('error', 'fail fetchQuote', { message: cTicker });
+            }
+
+           
         }
     }
     
@@ -282,11 +352,12 @@ async function updatePortfolio(){
 
 
 async function updatePortfolioAccount(cAccount){
+    _log(`updatePortfolioAccount`,cAccount) ;
 
     let cPortfolioFile = `./public/json/portfolio.json` ;
     let cPortfolio = fs.readFileSync(cPortfolioFile) ;
     let jsonPortfolio = JSON.parse(cPortfolio) ;
-    console.log(JSON.stringify(jsonPortfolio,null,3)) ;
+    //console.log(JSON.stringify(jsonPortfolio,null,3)) ;
 
     await _initBrowser() ;
 
@@ -297,63 +368,28 @@ async function updatePortfolioAccount(cAccount){
     
                 let cTicker = jsonPortfolio.accounts[i].holdings[j].ticker ;
                 let jsonQuote = await _fetchQuoteYahoo(cTicker) ;
-                
-                console.log(JSON.stringify(jsonQuote,null,3)) ;
-                updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
+                if(jsonQuote.retCode==200){
+                    console.log(JSON.stringify(jsonQuote,null,3)) ;
+                    updateHolding_Quote(jsonQuote.ticker,jsonQuote.Quote) ;
+                }else{
+                    //logger() ;
+                    logger.log('error', 'fail fetchQuote', { message: cTicker });
+                }
             }
             break ;
         }
     }
     
     await _exitBrowser() ;
-    console.log(JSON.stringify(jsonPortfolio,null,3)) ;
-    let cData = JSON.stringify(jsonPortfolio,null,3) ;
+    //console.log(JSON.stringify(jsonPortfolio,null,3)) ;
+    //let cData = JSON.stringify(jsonPortfolio,null,3) ;
     //fs.writeFileSync(cPortfolioFile,cData) ;
 }
 
 
-/*
-async function tryQuote(){
-    await _initBrowser() ;
-
-    
-    let cTicker = 'BN' ;
-    let jsonQuote = await _fetchQuoteYahoo_US(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-    
-
-    cTicker = '0010' ;
-    jsonQuote = await _fetchQuoteYahoo_HK(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
 
 
-    
-    cTicker = 'HICL' ;
-    jsonQuote = await _fetchQuoteYahoo_LSE(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-
-
-    cTicker = 'PGX' ;
-    jsonQuote = await _fetchQuoteYahoo_US(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-
-    cTicker = '000002' ;
-    jsonQuote = await _fetchQuoteYahoo_SZ(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-    
-    
-    cTicker = '600900' ;
-    jsonQuote = await _fetchQuoteYahoo_SH(cTicker) ;
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-
-    await _exitBrowser() ;
-
-}
-*/
-//tryQuote() ;
-
-
-function loadAccountSQLite(){
+function loadAccountSQLite(accountNO){
     let cStmt = `
         INSERT INTO accounts (
             accountNO,owner, bookvalue_CNY,bookvalue_USD,bookvalue_HKD,bookvalue_AUD,bookvalue_GBP,cash_CNY,cash_USD,cash_HKD,cash_AUD,cash_GBP,debt_CNY,debt_USD,debt_HKD,debt_AUD,debt_GBP,totalPL,totalPL_Per) 
@@ -378,7 +414,7 @@ function loadAccountSQLite(){
     ` ;
     const stmt = portfolioDB.prepare(cStmt);
     let jsonAccount={
-            "accountNO": "IBKR-6325",
+            "accountNO":accountNO,
             "owner": "alexszhang@gmail.com",
             "bookvalue_CNY": 0,
             "bookvalue_USD": 0,
@@ -450,7 +486,7 @@ function updateHolding_Quote(ticker,paraQuote){
     const stmt = portfolioDB.prepare('SELECT shares,cost FROM holdings WHERE ticker = ?');
     const holding = stmt.get(ticker);
 
-    console.log(holding); // => 2
+    //console.log(holding); // => 2
 
     let para={
         price:paraQuote,
@@ -459,7 +495,7 @@ function updateHolding_Quote(ticker,paraQuote){
         pl_total_percent:((paraQuote/holding.cost-1)*100).toFixed(2),
         ticker:ticker
     };
-    console.log(JSON.stringify(para,null,3)) ;
+    //console.log(JSON.stringify(para,null,3)) ;
     
     const stmt2 = portfolioDB.prepare(`UPDATE holdings SET price = ?, value= ?, pl_total=?, pl_total_percent=? WHERE ticker = ?`); 
     const updates = stmt2.run(para.price, para.value,para.pl_total,para.pl_total_percent,para.ticker);
@@ -474,26 +510,116 @@ async function updateSingleHolding(ticker){
     await _initBrowser() ;
 
     let jsonQuote = await _fetchQuoteYahoo(ticker);
-    console.log(JSON.stringify(jsonQuote,null,3)) ;
-    updateHolding_Quote(ticker,jsonQuote.Quote) ;
-
+    //console.log(JSON.stringify(jsonQuote,null,3)) ;
+    if(jsonQuote.retCode==200){
+        console.log(JSON.stringify(jsonQuote,null,3)) ;
+        updateHolding_Quote(ticker,jsonQuote.Quote) ;
+    }else{
+        //logger() ;
+        logger.log('error', 'fail fetchQuote', { message: cTicker });
+    }
     await _exitBrowser() ;
 }
 
+//update accounts set bookvalue_HKD =  (select SUM(price*shares) from holdings where accountNO="平安证券" AND currency="HKD") where accountNO="平安证券"
+async function updateAccounts(cAccount,cAsset){
+    let cStmt = `
+    update accounts set bookvalue_${cAsset} =  (select SUM(price*shares) from holdings where accountNO=? AND currency=?) where accountNO=?
+    ` ;
+    //console.log(cStmt) ;
+    const stmt = portfolioDB.prepare(cStmt);
+    
+    stmt.run(cAccount,cAsset,cAccount);
+}
 
 
+//logger.info('hello', { message: 'world' });
+//logger.log('error', 'hello', { message: 'world' });
 
 //updateSingleHolding('ASX.AX') ;
 //updateSingleHolding('BAM') ;
 //updateSingleHolding('0010.HK') ;
-//updateSingleHolding('HICL.L') ;
+//updateSingleHolding('CTY.L') ;
 //updateSingleHolding('000002.SZ') ;
 //updateSingleHolding('600900.SS') ;
 //updateSingleHolding('K71U.SI') ;
+//updateSingleHolding('0700.HK') ;
 
 
 //updatePortfolio() ;
 
-//batchLoadHolding('IBKR-6325') ;
+//batchLoadHolding("招商证券") ;
 
-updatePortfolioAccount('IBKR-3979') ;
+
+async function updatePortfolioAccounts(){
+    await updatePortfolioAccount('海通证券') ;
+    await updatePortfolioAccount('招商证券') ;
+    await updatePortfolioAccount('平安证券') ;
+    await updatePortfolioAccount('国金证券') ;
+    await updatePortfolioAccount('IBKR-1279') ;
+    await updatePortfolioAccount('IBKR-3979') ;
+    await updatePortfolioAccount('IBKR-6325') ;
+    await updatePortfolioAccount('IBKR-7075') ;
+}
+
+async function updateAccounts(){
+
+    updateAccounts('平安证券',"CNY") ;
+    updateAccounts('平安证券',"HKD") ;
+    updateAccounts('平安证券',"USD") ;
+
+    updateAccounts('国金证券',"CNY") ;
+    updateAccounts('国金证券',"HKD") ;
+    updateAccounts('国金证券',"USD") ;
+
+    updateAccounts('招商证券',"CNY") ;
+    updateAccounts('招商证券',"HKD") ;
+    updateAccounts('招商证券',"USD") ;
+
+    updateAccounts('海通证券',"CNY") ;
+    updateAccounts('海通证券',"HKD") ;
+    updateAccounts('海通证券',"USD") ;
+
+    updateAccounts('IBKR-7075',"GBP") ;
+    updateAccounts('IBKR-7075',"HKD") ;
+    updateAccounts('IBKR-7075',"USD") ;
+    updateAccounts('IBKR-7075',"AUD") ;
+
+    updateAccounts('IBKR-1279',"GBP") ;
+    updateAccounts('IBKR-1279',"HKD") ;
+    updateAccounts('IBKR-1279',"USD") ;
+    updateAccounts('IBKR-1279',"AUD") ;
+
+    updateAccounts('IBKR-3979',"GBP") ;
+    updateAccounts('IBKR-3979',"HKD") ;
+    updateAccounts('IBKR-3979',"USD") ;
+    updateAccounts('IBKR-3979',"AUD") ;
+
+    updateAccounts('IBKR-6325',"GBP") ;
+    updateAccounts('IBKR-6325',"HKD") ;
+    updateAccounts('IBKR-6325',"USD") ;
+    updateAccounts('IBKR-6325',"AUD") ;
+}
+
+/*
+const redis = require('redis') ;
+
+async function tryRedis(){
+
+    const client = await redis.createClient()
+    .on('error', err => console.log('Redis Client Error', err))
+    .connect();
+  
+  await client.set('key', 'value');
+  const value = await client.get('key');
+  console.log(value) ;
+  await client.disconnect();
+}
+
+tryRedis() ;
+*/
+
+//updatePortfolioAccounts() ;
+//loadAccountSQLite("平安证券");
+
+//updatePortfolioAccounts() ;

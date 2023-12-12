@@ -7,18 +7,6 @@ const scraper=require('./scrapeYahoo.js') ;
 scraper.initBrowser() ;
 
 const upateHoldingQueue = new Queue('dbUpdateSingleHolding');
-/*
-for(let i=0;i<10;i++){
-    const job = addQueue.createJob({x: i, y: i});
-    job.timeout(3000)
-      .retries(2)
-      .save()
-      .then((job) => {
-        // job enqueued, job.id populated
-      });
-}
-*/
-
 
 
 async function jobDBFunc(job){

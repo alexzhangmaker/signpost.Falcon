@@ -130,6 +130,9 @@ async function _parseQuoteYahoo(){
 }
 
 
+
+
+
 exports.initBrowser = _initBrowser;
 exports.fetchQuoteYahoo = _fetchQuoteYahoo;
 exports.exitBrowser = _exitBrowser;

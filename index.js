@@ -2,149 +2,176 @@ const express = require('express');
 
 const fs = require('fs');
 var path = require('path');
+const logger=require('./log.js') ;
 
-/*
-const ejs = require('ejs');
-const fetch = require('node-fetch') ;
-const fse = require('fs-extra')
-
-const cookieParser = require('cookie-parser')
-const session = require('express-session') ;
-const passport = require('passport');
-const logger = require('morgan') ;
-
-const { fork } = require('node:child_process');
-const urlTool=require('url');
-const download = require('download');
-*/
 require('dotenv').config() ;
+const winston = require('winston');
+//const path = require('node:path') ;
 
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://alexszhang:ChinaNO0001.@athenacluster0.ls5vshu.mongodb.net/?retryWrites=true&w=majority";
-
-
-const app = express();
-app.use(express.static('public'))
-app.use(express.json());
-
-const urlSignpost = process.env.urlSignpost;//'http://127.0.0.1:8080/' ;
-const projectId = process.env.SignpostGoogleProjectId;//'athena-396606';
-
-const userID = 'alexszhang@gmail.com' ;
-const port = parseInt(process.env.FalconServerPort);
-
-
-//http://127.0.0.1:8080/json?mm=10
-app.get('/json', serveIncomeStream);
-app.get('/dryRun', _dryRun);
-
-
-app.listen(port, () => {
-  console.log(`helloworld: listening on port ${port}`);
-});
+const assistantDB = require('better-sqlite3')('./public/SQLiteDB/assistantDB.db', { verbose: console.log });
 
 
 
-async function serveIncomeStream(req, res){
-  let cMonth = req.query.mm ;
-  console.log('serveIncomeStream') ;
-  let jsonGlobalIncome={
-    "date":"2023/10/31",
-    "incomes":[
-        {
-            "date":"2023/10/01",
-            "income":200.00,
-            "currency":"THB",
-            "source":"Arise Condo",
-            "class":"Rental",
-            "status":"collected"
-          },{
-            "date":"2023/10/01",
-            "income":200.00,
-            "currency":"USD",
-            "source":"PGX",
-            "class":"Devidend",
-            "status":"scheduled"
-          }
-    ]
+// Require the framework and instantiate it
+const fastify = require('fastify')({ logger: true })
+
+
+fastify.register(require('@fastify/static'), {
+  root: path.join(__dirname, 'public'),
+  prefix: '/public/', // optional: default '/'
+  //constraints: { host: 'example.com' } // optional: default {}
+}) ;
+
+
+const route = {
+  method: 'POST',
+  url: '/login',
+  handler: () => {},
+  schema: {},
+}
+
+
+// Declare a route
+fastify.get('/', function handler (request, response) {
+  response.send({ hello: 'world' }) ;
+}) ;
+
+fastify.get('/fetchTodos', function handler (request, response) {
+  let jsonTodos= _fetchToDos() ;
+  response.send(jsonTodos) ;
+}) ;
+
+
+//url: /markTodo/:id/:status
+fastify.get('/markTodo/:id/:status', function handler (request, response) {
+  const {id, status } = request.params;
+  console.log(request.params) ;
+  console.log(JSON.stringify(request.params,null,3)) ;
+
+
+  console.log(`${id}    ${status}`) ;
+  //let jsonTodos= _markToDo(idToDo,status) ;
+  _markToDo(id.replace(':',''),status.replace(':','')) ;
+  response.send({status:'200 ok'}) ;
+}) ;
+
+//   /markTodo/:userId/:secretToken
+/*
+fastify.route({
+  method: 'GET',
+  url: '/markTodo',
+  schema: {
+    // request needs to have a querystring with a `name` parameter
+    querystring: {
+      id: { type: 'string' },
+      status:{ type: 'string' }
+    }
+  },
+  handler: async (request, reply) => {
+   // here you will get request.query if your schema validate
+
+  }
+})
+*/
+
+
+
+fastify.post('/saveTodos', async function handler (request, response) {
+  let jsonData = request.body ;
+  console.log(jsonData) ;
+  console.log(JSON.stringify(jsonData,null,3)) ;
+  _newToDo(jsonData) ;
+  response.send({ hello: 'world' }) ;
+
+}) ;
+
+
+// Run the server!
+fastify.listen({ port: 3000 }, (err) => {
+  if (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}) ;
+
+
+function _markToDo(pIdToDo,pStatus){
+
+  //let cStmtIns = `UPDATE todos SET (status) VALUES (@status) WHERE  idToDo=@idToDo` ;
+  //const stmtIns = assistantDB.prepare(cStmtIns);    
+  //stmtIns.run({status:pStatus,idToDo:pIdToDo});
+
+  const stmt = assistantDB.prepare('UPDATE todos SET status = ? WHERE idToDo = ?'); 
+  const updates = stmt.run(pStatus, pIdToDo);
+}
+
+function _newToDo(jsonTodo){
+  let cToDoID = _generateDynamicID() ;
+  let objMoment = new Date() ;
+
+  let jsonDBTodo={
+    idToDo:_generateDynamicID(),
+    timeStamp:jsonTodo.timeStamp,//objMoment.toLocaleTimeString(),
+    title:jsonTodo.title,
+    memo:jsonTodo.memo,
+    status:'todo'
   } ;
 
-  let jsonIncome = {
-    "date":"2023/10/31",
-    "incomes":await runQueryIncome(cMonth)
-  };
-  
-  console.log(JSON.stringify(jsonIncome,null,3)) ;
-
-  res.json(jsonIncome);
+  let cStmtIns = `
+  INSERT INTO todos (idToDo,timeStamp,title,memo,status) VALUES ( @idToDo,@timeStamp,@title,@memo,@status)
+  ` ;
+  const stmtIns = assistantDB.prepare(cStmtIns);    
+  stmtIns.run(jsonDBTodo);
 }
 
+function _fetchToDos(){
+  const stmt = assistantDB.prepare('SELECT idToDo,timeStamp,title,memo,status FROM todos where status = ? order by timeStamp DESC');// order by timeStamp
+  const entries = stmt.all("todo");
 
 
-
-
-
-
-async function _dryRun(req, res){
-  res.send('dryRun request receieved') ;
-  console.log('_dryRun') ;
-  // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-  const client = new MongoClient(uri, {
-    serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
+  let jsonTodos=[] ;
+  let jsonBuckets=[] ;
+  for(let i=0;i<entries.length;i++){
+    let jsonTodo= entries[i] ;
+    //let dateParts = entries[i].timeStamp.split('-') ;
+    //jsonTodo.year=parseInt(dateParts[0]) ;
+    //jsonTodo.month=parseInt(dateParts[1]) ;
+    //jsonTodo.date=parseInt(dateParts[2]) ;
+    //if(jsonBuckets.includes())
+    /*
+    if(entries[i].memo!='TBD'){
+      jsonTodo.tags = JSON.parse(entries[i].memo) ;
     }
-  });
-
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    */
+    jsonTodos.push(jsonTodo/*entries[i]*/) ;
   }
 
+
+  return jsonTodos ;
 }
 
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
+// some tool functions
+function _hashCode(str, seed = 0){
+  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+  for(let i = 0, ch; i < str.length; i++) {
+      ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
   }
-});
+  h1  = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+  h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2  = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+  h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
 
-async function runQueryIncome(cMonth) {
-  let incomeStream={} ;
-  try {
-      await client.connect();
-      // Get the database and collection on which to run the operation
-      const database = client.db("falcon");
-      const incomeStatement = database.collection("incomeStatement");
-      // Query for movies that have a runtime less than 15 minutes
-      const query = { 
-          year: "2023",
-          month:cMonth 
-      };
-      
-      const cursor = incomeStatement.find(query/*, options*/);
-      // Print a message if no documents were found
-      if ((await incomeStatement.countDocuments(query)) === 0) {
-          console.log("No documents found!");
-      }
-      // Print returned documents
-      for await (const incomeDoc of cursor) {
-          //console.dir(incomeDoc.incomeStream);
-          incomeStream = incomeDoc.incomeStream ;
-      }
-  } finally {
-      await client.close();
-      return incomeStream ;
-  }
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+
+function _generateDynamicID(){
+  let objMoment = new Date() ;
+  //let cBookmarkID = `${objMoment.toLocaleTimeString()}` ;
+  let cdynamicID = _hashCode(objMoment.toLocaleTimeString()) + Math.round(Math.random()*1000000);
+
+  //console.log(cdynamicID) ;
+  return cdynamicID.toString() ;
 }

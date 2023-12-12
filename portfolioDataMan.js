@@ -157,7 +157,6 @@ function updateHolding_Quote(ticker,paraQuote){
 }
 
 
-
 async function updateSingleHolding(ticker){
     await scraper.initBrowser() ;
 
@@ -207,8 +206,41 @@ async function updateAccounts(){
 
 
 function _publishPortfolio(cFileURI){
+   
+    let jsonPortfolio={
+        accounts:[] 
+    };
+    let accounts=['海通证券','招商证券','平安证券','国金证券','IBKR-1279','IBKR-3979','IBKR-6325','IBKR-7075'] ;
+
+    const stmt = portfolioDB.prepare('SELECT ticker,company,shares,cost,currency,exchange,price,pl_total,pl_total_percent,value,class FROM holdings WHERE accountNO = ?');
+    for(let i=0;i<accounts.length;i++){
+        let jsonAccount = {
+            general:{
+                account:accounts[i]
+            },
+            holdings:[]
+        } ;
+
+        let holdings = stmt.all(accounts[i]);//.all();
+        holdings.forEach(holding=>{
+            console.log(holding) ;
+            jsonAccount.holdings.push(holding) ;
+        }) ;
+        jsonPortfolio.accounts.push(jsonAccount) ;
+    }
+
+    let cPortolioData = JSON.stringify(jsonPortfolio,null,3) ;
+    console.log(cPortolioData);
+    fs.writeFileSync(cFileURI,cPortolioData) ;
+
     
 }
+
+
+//let cDate = new Date() ;
+//let cPublishURI = `./public/json/portfolio${cDate.getFullYear()}${cDate.getMonth()+1}${cDate.getDate()}.json` ;
+//_publishPortfolio(cPublishURI) ;
+
 
 exports.dbUpdateSingleHolding = updateSingleHolding;
 exports.dbUpdateHoldingQuote = updateHolding_Quote;
@@ -216,6 +248,5 @@ exports.dbUpdateHoldingQuote = updateHolding_Quote;
 exports.dbUpdatePortfolioAccount = updateAccounts;
 exports.dbUpdatePortfolioHoldings = updatePortfolioAccounts;
 exports.publishPortfolio = _publishPortfolio;
-
 
 

@@ -4,11 +4,7 @@ const cron = require('node-cron');
 const logger=require('./log.js') ;
 const scrapeDB=require('./portfolioDataMan.js') ;
 
-  
 
-  //logger.info('hello', { message: 'world' });
-  //logger.log('error', 'hello', { message: 'world' });
-  //_log('index.js','server started') ;
 
 logger.log(`batchDBJobs','process started`) ;
 
@@ -18,7 +14,6 @@ logger.log(`batchDBJobs','process started`) ;
 cron.schedule('*/5 * * * *', batch_UpdateHolding);
 //run every hour
 
-//scrapeDB.dbUpdateSingleHolding() ;
 
 
 const upateHoldingQueue = new Queue('dbUpdateSingleHolding');
@@ -69,27 +64,3 @@ function batch_UpdateHolding(){
 
 
 
-/*
-for(let i=0;i<10000;i++){
-    let cTime = new Date() ;
-    let jsonJobData = {
-        x:i,
-        y:i,
-        cDate:cTime.toLocaleTimeString()
-    } ;
-    const job = addQueue.createJob(jsonJobData);
-    job.timeout(3000)
-        .retries(2)
-        .save()
-        .then((job) => {
-        // job enqueued, job.id populated
-        console.log(`job queued:${job.id}, ${JSON.stringify(job.data.cDate)}`) ;
-    });
-
-    job.on('progress', (progress) => {
-        console.log(
-          `Job ${job.id} reported progress: page ${progress.page} / ${progress.totalPages}`
-        );
-    });
-}
-*/

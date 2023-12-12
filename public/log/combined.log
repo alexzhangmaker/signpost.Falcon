@@ -1,0 +1,442 @@
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"index.js Wed Nov 29 2023:server started","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 05:03:55:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/CNY 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/CNY 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/CNY 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/CNY 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/GBP 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/AUD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/GBP 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/AUD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/GBP 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/AUD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/GBP 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/HKD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/USD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/AUD 2023/11/30 05:05:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/CNY 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','平安证券/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/CNY 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','国金证券/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/CNY 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','招商证券/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/CNY 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','海通证券/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/GBP 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-7075/AUD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/GBP 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-1279/AUD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/GBP 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-3979/AUD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/GBP 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/HKD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/USD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"aggregate Account','IBKR-6325/AUD 2023/11/30 05:10:00:undefined","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 05:17:19:undefined","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 05:49:14:undefined","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:49:14:海通证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:49:33:招商证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:49:51:平安证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:50:02:国金证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:50:21:IBKR-1279","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:50:47:IBKR-3979","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:51:08:IBKR-6325","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:51:28:IBKR-7075","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 11:25:25:undefined","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 11:26:52:undefined","service":"user-service"}
+{"level":"info","message":"batchDBJobs','process started 2023/11/30 12:39:56:undefined","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 12:56:36:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:00:44:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:00:47:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:01:40:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:03:26:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:BIP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:BIP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:WPC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:WPC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:MKL.D:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:MKL.D:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:US.T:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:US.T:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:ADC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:ADC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:SRC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:SRC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:NLOP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:NLOP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0010.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0010.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:1972.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:1972.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0823.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0823.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0014.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0014.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0778.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0778.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0388.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0388.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:HICL.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:HICL.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:NG.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:NG.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:9988.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:9988.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:SSE.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:SSE.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:9618.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:9618.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:ASX.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:ASX.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:SCHD:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:SCHD:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:GEO.Bond:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:GEO.Bond:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:BHP.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:BHP.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:MQG.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:MQG.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:IEF:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:IEF:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:TCL.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:TCL.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:PTM.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:PTM.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:K71U.SI:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:K71U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:C38U.SI:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:C38U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:INPP.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:INPP.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:UKW.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:UKW.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:BLND.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:BLND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:TRIG.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:TRIG.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:LAND.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:LAND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:SEQI.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:SEQI.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:CTY.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:CTY.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:3IN.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:3IN.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:513010.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:513010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:513050.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:513050.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:515080.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:515080.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0700.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0700.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:2318.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:2318.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:2601.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:2601.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:3690.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:3690.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:600007.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:600007.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:600900.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:600900.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:601336.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:601336.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:0966.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:0966.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:1038.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:1038.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:2202.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:2202.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:600009.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:600009.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:503010.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:503010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:000002.SZ:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:000002.SZ:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:05:38:1359.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:05:38:1359.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BN:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BN:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BAM:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BAM:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BIPC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BIPC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BEPC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BEPC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:MKL:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:MKL:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:O:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:O:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:TLT:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:TLT:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BEP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BEP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BIP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BIP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:WPC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:WPC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:MKL.D:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:MKL.D:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:US.T:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:US.T:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:ADC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:ADC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:SRC:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:SRC:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:NLOP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:NLOP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0010.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0010.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:1972.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:1972.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0823.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0823.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0014.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0014.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0778.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0778.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0388.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0388.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:HICL.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:HICL.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:NG.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:NG.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:9988.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:9988.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:SSE.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:SSE.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:9618.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:9618.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:ASX.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:ASX.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:SCHD:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:SCHD:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:GEO.Bond:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:GEO.Bond:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BHP.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BHP.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:MQG.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:MQG.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:IEF:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:IEF:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:TCL.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:TCL.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:PTM.AX:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:PTM.AX:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:K71U.SI:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:K71U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:C38U.SI:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:C38U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:INPP.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:INPP.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:UKW.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:UKW.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BLND.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BLND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:TRIG.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:TRIG.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:LAND.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:LAND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:SEQI.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:SEQI.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:CTY.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:CTY.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:3IN.L:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:3IN.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:513010.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:513010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:513050.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:513050.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:515080.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:515080.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0700.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0700.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:2318.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:2318.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:2601.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:2601.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:3690.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:3690.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:600007.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:600007.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:600900.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:600900.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:601336.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:601336.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:0966.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:0966.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:1038.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:1038.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:2202.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:2202.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:600009.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:600009.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:503010.SS:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:503010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:000002.SZ:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:000002.SZ:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:1359.HK:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:1359.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:10:43:BEP:TypeError: Cannot read properties of null (reading 'goto')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:10:43:BEP:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:15:28:MKL.D:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:15:28:MKL.D:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:15:31:US.T:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:15:31:US.T:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:16:18:GEO.Bond:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:16:18:GEO.Bond:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:17:43:503010.SS:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:17:43:503010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:20:34:MKL.D:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:20:34:MKL.D:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:20:43:US.T:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:20:43:US.T:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 2: 2023/11/30 13:21:34:GEO.Bond:TypeError: Cannot read properties of null (reading 'querySelectorAll')","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:34:GEO.Bond:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:K71U.SI:TargetCloseError: Protocol error (Page.navigate): Target closed","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:K71U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:C38U.SI:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:C38U.SI:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:INPP.L:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:INPP.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:UKW.L:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:UKW.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:BLND.L:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:BLND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:TRIG.L:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:TRIG.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:LAND.L:TargetCloseError: Protocol error (Page.navigate): Session closed. Most likely the page has been closed.","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:LAND.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:SEQI.L:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:SEQI.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:CTY.L:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:CTY.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:3IN.L:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:3IN.L:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:513010.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:513010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:513050.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:513050.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:515080.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:515080.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:0700.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:0700.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:2318.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:2318.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:2601.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:2601.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:3690.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:3690.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:600007.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:600007.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:600900.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:600900.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:601336.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:601336.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:0966.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:0966.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:1038.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:1038.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:2202.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:2202.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:600009.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:600009.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:503010.SS:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:503010.SS:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:000002.SZ:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:000002.SZ:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"_fetchQuoteYahoo 1: 2023/11/30 13:21:46:1359.HK:Error: Requesting main frame too early!","service":"user-service"}
+{"level":"info","message":"jobDBFunc 2023/11/30 13:21:46:1359.HK:jsonQuote.retCode","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"index.js 2023/11/30 14:39:41:server started","service":"user-service"}
+{"level":"info","message":"index.js 2023/11/30 15:54:24:server started","service":"user-service"}

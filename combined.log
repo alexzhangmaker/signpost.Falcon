@@ -1,0 +1,34 @@
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"hello world","service":"user-service"}
+{"level":"error","message":"hello world","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:20:00:海通证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:20:21:招商证券","service":"user-service"}
+{"level":"error","message":"fail fetchQuote 0966.HK","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:21:07:平安证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:21:20:国金证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:21:42:IBKR-1279","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:22:09:IBKR-3979","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:22:28:IBKR-6325","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:22:54:IBKR-7075","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:25:00:海通证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:25:20:招商证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:25:45:平安证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:26:17:国金证券","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:26:46:IBKR-1279","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:27:17:IBKR-3979","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:27:39:IBKR-6325","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:28:01:IBKR-7075","service":"user-service"}
+{"level":"info","message":"updatePortfolioAccount 2023/11/30 05:30:00:海通证券","service":"user-service"}
